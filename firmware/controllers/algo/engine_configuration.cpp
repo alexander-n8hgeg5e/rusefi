@@ -59,6 +59,7 @@
 #include "mazda_miata_vvt.h"
 #include "mazda_323.h"
 #include "mazda_626.h"
+#include "mazda_z5.h"
 
 #include "saturn_ion.h"
 #include "MiniCooperR50.h"
@@ -1298,6 +1299,9 @@ void resetConfigurationExt(Logging * logger, engine_type_e engineType DECLARE_EN
 		break;
 	case GEO_STORM:
 		setGeoStormConfiguration(PASS_ENGINE_PARAMETER_SIGNATURE);
+		break;
+	case MAZDA_Z5:
+                setMazda_z5_EngineConfiguration(PASS_ENGINE_PARAMETER_SIGNATURE);
 		break;
 
 	default:

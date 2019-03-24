@@ -1,0 +1,14 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SW_Rotary2x4
+D 2 rotary switch with 6 positions
+K rotary switch
+F http://cdn-reichelt.de/documents/datenblatt/C200/DS-Serie%23LOR.pdf
+$ENDCMP
+#
+$CMP Switch
+D Interrupteur simple
+K switch
+$ENDCMP
+#
+#End Doc Library

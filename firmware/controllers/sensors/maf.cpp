@@ -91,6 +91,7 @@ void setDensoTODO(persistent_config_s *e) {
 	}
 }
 
+
 void setMazdaMiataNAMaf(persistent_config_s *e) {
   int i = 0;
   i= addMafPoint(e, i, 0.000000, 0.000000);
@@ -145,5 +146,22 @@ void setMazdaMiataNAMaf(persistent_config_s *e) {
   i= addMafPoint(e, i, 75.066822, 4.900000);
   i= addMafPoint(e, i, 81.067862, 5.000000);
   
+  fillTheRest(e, i);
+}
+
+
+void setMazda_z5_Maf(persistent_config_s *e) {
+  int i= 0;
+  i = addMafPoint(e, i,  -35.0      ,   0.0        );              
+  i = addMafPoint(e, i,  12.0       ,   0.55      );               
+  i = addMafPoint(e, i,  19.46      ,   1.1        );              
+  i = addMafPoint(e, i,  44.8       ,   1.63      );               
+  i = addMafPoint(e, i,  66.62      ,   2.08       );              
+  i = addMafPoint(e, i,  89.6       ,   2.35      );               
+  i = addMafPoint(e, i,  108.12     ,   2.53        );             
+  i = addMafPoint(e, i,  130.45     ,   2.75        );             
+  i = addMafPoint(e, i,  153.82     ,   2.95        );             
+  i = addMafPoint(e, i,  358.82     ,   4.13        );             
+
   fillTheRest(e, i);
 }

@@ -6,3 +6,6 @@ rusefi.ini
 openocd
 rusefi_*.*
 triggers
+/models/src/com/rusefi/config/Fields.java
+/rusefi.xml
+*.jar

@@ -8,3 +8,6 @@ Release_EMS/
 Debug/
 .settings/
 firmware/rusefi_ram_report.txt
+/java_console_binary/
+out/
+/bin/

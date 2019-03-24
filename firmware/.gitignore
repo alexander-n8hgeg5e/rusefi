@@ -1,1 +1,6 @@
-openocd
+cscope*
+/tunerstudio/rusefi.ini
+/controllers/algo/engine_configuration_generated_structures.h
+/controllers/algo/auto_generated_enums.c
+/controllers/algo/auto_generated_enums.h
+/controllers/algo/auto_generated_enums.cpp

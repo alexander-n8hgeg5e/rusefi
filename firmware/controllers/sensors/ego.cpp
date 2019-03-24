@@ -173,3 +173,24 @@ void setEgoSensor(ego_sensor_e type DECLARE_ENGINE_PARAMETER_SUFFIX) {
 	boardConfiguration->afr_type = type;
 	initEgoSensor(&engineConfiguration->afr, type);
 }
+
+
+void setNarrowToWideAproxTable(DECLARE_ENGINE_PARAMETER_SIGNATURE) {
+    engineConfiguration->narrowToWideOxygenBins[0] = 0.029999971389770508  ;
+    engineConfiguration->narrowToWideOxygenBins[1] = 0.059999942779541016    ;
+    engineConfiguration->narrowToWideOxygenBins[2] = 0.13000011444091797   ;
+    engineConfiguration->narrowToWideOxygenBins[3] = 0.4500007629394531   ;
+    engineConfiguration->narrowToWideOxygenBins[4] = 0.75                     ;
+    engineConfiguration->narrowToWideOxygenBins[5] = 0.8600006103515625   ;
+    engineConfiguration->narrowToWideOxygenBins[6] = 0.9000015258789062   ;
+    engineConfiguration->narrowToWideOxygenBins[7] = 0.9300000071525574   ;
+
+    engineConfiguration->narrowToWideOxygen[0] = 20.0   ;
+    engineConfiguration->narrowToWideOxygen[1] = 16.199951171875   ;
+    engineConfiguration->narrowToWideOxygen[2] = 14.75   ;
+    engineConfiguration->narrowToWideOxygen[3] = 14.699951171875   ;
+    engineConfiguration->narrowToWideOxygen[4] = 14.6500244140625   ;
+    engineConfiguration->narrowToWideOxygen[5] = 13.300048828125   ;
+    engineConfiguration->narrowToWideOxygen[6] = 11.800048828125   ;
+    engineConfiguration->narrowToWideOxygen[7] = 10.199951171875   ;
+}

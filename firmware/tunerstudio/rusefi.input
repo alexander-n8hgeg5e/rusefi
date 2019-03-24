@@ -102,32 +102,32 @@ enable2ndByteCanID = false
        recordField = PA1,               "Inj B",         1,  1, 1,   ""
        recordField = PA0,               "Inj A",         0,  1, 1,   ""
 
-[VeAnalyze]
-
-        ;    tableName,  lambdaTargetTableName, lambdaChannel, egoCorrectionChannel, activeCondition
-#if tuneByMAF
-       veAnalyzeMap = fuelTableTbl, afrTableTbl, AFRValue, egoCorrection, { 1 }
-#else
-       veAnalyzeMap = veTableTbl, afrTableTbl, AFRValue, egoCorrection, { 1 }
-#endif
-       lambdaTargetTables = afrTableTbl, afrTSCustom
-
-       ; filter =  Name,        "DisplayName", outputChannel, operator, defaultVal, userAdjustable
-        filter = minRPMFilter, "Minimum RPM", RPMValue,           <       , 500,      , true
-
-#if CELSIUS
-         filter = minCltFilter, "Minimum CLT", coolant,       <       , 60,       , true
-#else
-         filter = minCltFilter, "Minimum CLT", coolant,       <       , 160,      , true
-#endif
-
-         filter = deltaTps, "dTPS", deltaTps       >       , 50,      , true
-
-		filter = VBatt, "VBatt", VBatt       <       , 12,      , true
-
-         filter = minTps, "Minimum TPS", TPSValue,       <       , 1,       , true
-
-
+;[VeAnalyze]
+;
+;        ;    tableName,  lambdaTargetTableName, lambdaChannel, egoCorrectionChannel, activeCondition
+;#if tuneByMAF
+;       veAnalyzeMap = fuelTableTbl, afrTableTbl, AFRValue, egoCorrection, { 1 }
+;#else
+;       veAnalyzeMap = veTableTbl, afrTableTbl, AFRValue, egoCorrection, { 1 }
+;#endif
+;       lambdaTargetTables = afrTableTbl, afrTSCustom
+;
+;       ; filter =  Name,        "DisplayName", outputChannel, operator, defaultVal, userAdjustable
+;        filter = minRPMFilter, "Minimum RPM", RPMValue,           <       , 500,      , true
+;
+;#if CELSIUS
+;         filter = minCltFilter, "Minimum CLT", coolant,       <       , 60,       , true
+;#else
+;         filter = minCltFilter, "Minimum CLT", coolant,       <       , 160,      , true
+;#endif
+;
+;         filter = deltaTps, "dTPS", deltaTps       >       , 50,      , true
+;
+;		filter = VBatt, "VBatt", VBatt       <       , 12,      , true
+;
+;         filter = minTps, "Minimum TPS", TPSValue,       <       , 1,       , true
+;
+;
 ;[VeAnalyze]
 ;       fuelAnalyzeMap = fuelTableTbl, afrTableTbl, AFRValue, egoCorrection , { 1 }
 ;        filter = minRPMFilter, "Minimum RPM", RPMValue,           <       , 500,      , true
@@ -137,7 +137,7 @@ enable2ndByteCanID = false
 [OutputChannels]
 
 ; see TS_FILE_VERSION in firmware code
-fileVersion = { 20171101 }
+fileVersion = { 20181212 }
 
    ochGetCommand    = "O%2o%2c"
 
@@ -1016,8 +1016,8 @@ menuDialog = main
 		subMenu = injectionDeadTime,		"Injector Dead Time"
 		subMenu = std_separator
 		subMenu = fuelTableDialog,			"Fuel Table", 0, {fuelAlgorithm != LM_SPEED_DENSITY}
-		subMenu = veTableDialog,			"VE Table", 0, {fuelAlgorithm == LM_SPEED_DENSITY}
-		subMenu = afrTableTbl,				"Target AFR Table", 0, {fuelAlgorithm == LM_SPEED_DENSITY}
+		subMenu = veTableDialog,			"VE Table",   0, {fuelAlgorithm == LM_SPEED_DENSITY}
+		subMenu = afrTableTbl,				"Target AFR Table", 0, {fuelAlgorithm == LM_SPEED_DENSITY ||fuelAlgorithm == LM_REAL_MAF }
 		subMenu = injPhaseTableTbl,         "Injection Phase Table"
 		subMenu = std_separator
 		subMenu = warmupFuelDialog,			"Warmup fuel closed-loop"
@@ -1190,7 +1190,7 @@ cmd_stop_engine              = "w\x00\x99\x00\x00"
 
 	dialog = fuelTableRight, "", yAxis
 	 	topicHelp = "http://rusefi.com/fuel"
-		displayOnlyField = "Fuel Algorithm",						fuelAlgorithm
+		displayOnlyField = "Fuel Algorithm", fuelAlgorithm
 		panel = fuelTableBottomDialog, Center
 		liveGraph = fuelLive, "Fuel", South
 			graphLine = AFRValue
@@ -1970,7 +1970,7 @@ cmd_stop_engine              = "w\x00\x99\x00\x00"
 		field = "Boost Cut Pressure",					boostCutPressure
 		field = ""
 		field = "http://rusefi.com/fuel"
-		field = "Fuel Algorithm",						fuelAlgorithm
+		field = "Fuel Algorithm",fuelAlgorithm
 		field = ""
 		field = "#System hack's"
 		field = "Global fuel correction", 				globalFuelCorrection

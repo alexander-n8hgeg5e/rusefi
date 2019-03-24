@@ -175,6 +175,8 @@ typedef enum {
 
 	MAZDA_MIATA_NA8 = 56,
 
+	MAZDA_Z5 = 57,
+
 	PROMETHEUS_DEFAULTS = 100,
 
 	Force_4_bytes_size_engine_type = ENUM_32_BITS,

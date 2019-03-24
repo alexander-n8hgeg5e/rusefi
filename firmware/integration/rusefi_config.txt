@@ -61,7 +61,7 @@ struct_no_prefix engine_configuration_s
 !
 ! this is used to confirm that firmware and TunerStudio are using the same rusefi.ini version
 ! so not forget to change fileVersion in rusefi.ini
-#define TS_FILE_VERSION 20171101
+#define TS_FILE_VERSION 20181212
 
 #define WARMUP_TARGET_AFR_SIZE 4
 
@@ -329,10 +329,10 @@ int sensorSnifferRpmThreshold;+Disable sensor sniffer above this rpm;"RPM",     
 	int rpmHardLimit;set rpm_hard_limit X;"rpm",    1,      0,       0, 20000.0,        2
 
 
-#define engine_load_mode_e_enum "MAF", "Alpha-N/TPS", "MAP", "SPEED DENSITY" 
+#define engine_load_mode_e_enum "MAF", "Alpha-N/TPS", "MAP", "SPEED DENSITY", "REAL MAF" "INVALID", "INVALID", "INVALID"
 
 
-custom engine_load_mode_e 4 bits, U32, @OFFSET@, [0:1], @@engine_load_mode_e_enum@@
+custom engine_load_mode_e 4 bits, U32, @OFFSET@, [0:2], @@engine_load_mode_e_enum@@
 engine_load_mode_e fuelAlgorithm;+This setting controls which fuel quantity control algorithm is used.\nset algorithm X
 
 

@@ -1,0 +1,8 @@
+firmware/controllers/algo/auto_generated_enums.cpp
+firmware/controllers/algo/auto_generated_enums.h
+firmware/controllers/algo/engine_configuration_generated_structures.h
+java_tools/enum_to_string/src/com/rusefi/EnumToString.java
+firmware/tunerstudio/rusefi.ini
+unit_tests/triggers.txt
+java_console/models/src/com/rusefi/config/Fields.java
+unit_tests/triggers.txt

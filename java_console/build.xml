@@ -20,8 +20,8 @@
             <src path="tools/src"/>
         </javac>
 
-        <junit fork="no"
-               maxmemory="512m"
+        <junit fork="yes"
+               maxmemory="4G"
                printsummary="yes"
                haltonfailure="yes">
 
